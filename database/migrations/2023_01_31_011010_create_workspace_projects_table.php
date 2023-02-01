@@ -17,13 +17,14 @@ return new class extends Migration
             $table->uuid('id')->primary();
 
             $table->foreignUuid('workspace_id')->nullable()->references('id')->on('workspaces');
-            $table->foreignUuid('project_id')->nullable()->references('id')->on('workspace_projects');
-            $table->foreignUuid('message_id')->nullable()->references('id')->on('workspace_projects');
 
-            $table->enum('scope', ['message', 'reply'])->default('message')->nullable(); // eg: message, reply
+            $table->string('name');
+            $table->text('description')->nullable();
 
-            $table->string('subject')->nullable()->comment('subject will be blank on first message created');
-            $table->text('message');
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
+
+            $table->enum('status', ['on-track', 'at-risk', 'off-track', 'on-hold', 'complete'])->nullable();
 
             $table->foreignUuid('created_by')->references('id')->on('users');
             $table->foreignUuid('updated_by')->nullable()->references('id')->on('users');
