@@ -10,8 +10,13 @@
   ],
   "homepage": "https://github.com/faridlab/salt-laravel-workspace",
   "require": {
-    "php": "^7.3",
-    "laravel/framework": "^8.0"
+    "php": "^8.0.2",
+    "doctrine/dbal": "^3.3",
+    "faridlab/laravel-search-query": "^9",
+    "faridlab/salt-laravel": "^9",
+    "faridlab/salt-laravel-contacts": "^9",
+    "faridlab/salt-laravel-organization": "^9",
+    "faridlab/salt-laravel-project": "^9"
   },
   "require-dev": {
     "phpunit/phpunit": "^9.0",
